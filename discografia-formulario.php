@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Discografia</title>
-</head>
+   
+<?php
+    $titulo_da_pagina = "Cadastro de discografia";
+    include "inc-cabeçalho.php";
+?>
+
 <body>
+<main>
+    <div class="container">
+     <?php include "inc-menu.php"; ?>
+
 
     <h1>Cadastro de Discografia</h1>
+
     <form action="discografia-salvar.php" method="post">
         <label>Artista:</label><br>
         <input type="text" name="artista"><br><br>
@@ -31,17 +38,9 @@
         <button type="reset">Limpar</button>  <br><br>
  
 </form>
+ </main>
 
-    <?php
-    $arquivo = fopen("discografia_db.txt", "r");
-    while(!feof($arquivo)){
-        $linha = fgets($arquivo);
-        echo "$linha<br>";
-       
-    }
-    fclose($arquivo);
-    ?>
+ <?php include "inc-rodape.php"; ?>
 
-   
 </body>
 </html>
