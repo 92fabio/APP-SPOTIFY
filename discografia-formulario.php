@@ -4,7 +4,7 @@
    
 <?php
     $titulo_da_pagina = "Cadastro de discografia";
-    include "inc-cabeçalho.php";
+    include "inc-cabecalho.php";
 ?>
 
 <body>

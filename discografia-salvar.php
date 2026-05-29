@@ -7,10 +7,7 @@ $foto = $_POST['foto'];
 
 echo "$artista - $nome - $ano - $tipo - $foto";
 
-$conexao = mysqli_connect("localhost", "root", "", "db_spotify"); // conexao para o banco de dados
-if (!$conexao){
-    die("<h3>erro</h3> " . mysqli_connect_error());
-}
+include "inc-conexao.php";
 
 $sql = "insert into tb_discografia (artista, nome, ano, tipo, foto) values ('$artista', '$nome', '$ano', '$tipo', '$foto')";
 
