@@ -26,6 +26,7 @@ include "inc-cabecalho.php";
                     <td>Album</td>
                     <td>Ano</td>
                     <td>Tipo</td>
+                    <td>Ações</td>
                 </tr>
  
                 <?php
@@ -44,7 +45,9 @@ include "inc-cabecalho.php";
 
                     echo "<td> {$linha_resultado['ano']} </td> ";
                     echo "<td> {$linha_resultado['tipo']} </td> ";
-                    echo "<tr>";
+                    echo "<td> <a href='discografia-excluir.php?id={$linha_resultado['id']}'>Excluir</a> 
+                    <a href='discografia-editar.php?id={$linha_resultado['id']}'>Editar</a></td> ";
+                    echo "</tr>";
                 }
  
                 mysqli_close($conexao);
