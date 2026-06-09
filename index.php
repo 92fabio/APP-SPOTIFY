@@ -1,0 +1,35 @@
+<?php
+$titulo_da_pgina = "Discos";
+include "inc-cabecalho.php";
+?>
+<body>
+    <main class="container">
+        <h1 class="text-center fs-2 mt-2 mb4">Discografia</h1>
+        <div class="row mb-4">
+            <?php
+            include "inc-conexao.php";
+            $sql = "select * from tb_discografia order by artista, ano";
+            $resultado = mysqli_query($conexao, $sql);
+            while($linha = mysqli_fetch_assoc($resultado)){
+                ?>
+                <div class="col-3">
+                    <div class="cartao" style="background-image:url('<?=$linha['foto'];?>');">
+                        <div class="cor-cartao">
+                            <div class="texte-cartao p-3>
+                                <h1 class="fs-4><?=$linha['nome'];?></h1>
+                                <h2 class="fs-5><?=$linha['artista'];?></h2>
+                                <h3 class="fs-6><?=$linha['tipo'];?> - <?=$linha['ano'];?></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+          }  
+          mysqli_close($conexao);
+          ?>
+        </div>
+</main>
+
+<?php
+include "inc-rodape.php";
+?>

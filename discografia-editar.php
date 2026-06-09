@@ -19,7 +19,7 @@ include "inc-cabecalho.php";
     <main class="conteiner">
         <h1>Editar disco <?=$nome?></h1>
         <form method="post" action="discografia-atualizar.php?id=<?=$id?>">
-            Artista: <input name="Artista" value="<?=$artista?>"> <br> 
+            Artista: <input name="artista" value="<?=$artista?>"> <br> 
             Nome do álbum: <input name="nome" value="<?=$nome?>"> <br>
             Ano: <input type="number" name="ano" value="<?=$ano?>"> <br>
             Foto: <input name="foto" value="<?=$foto?>"><br>
